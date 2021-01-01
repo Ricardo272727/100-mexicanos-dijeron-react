@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+
+.score {
+  display: inline-block;
+  background: black;
+  padding: 1rem 4rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.score p{
+  font-size: 3rem;
   color: white;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.board{
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-board{
+  margin-top: 1rem;
+  width: 100%;
+  padding: 2rem;
+  background: black;
+  color: white;
+  font-weight: bold;
 }
+
+.content-board .question{
+  width: 100%;
+}
+
+
+.content-board .option, 
+.content-board .option-show 
+{
+  width: 100%;
+}
+
+.content-board .option span{
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+} 
+
+.content-board .options{
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.side{
+  padding-top: 40vh;
+}
+
+.xs{
+  padding: 2rem;
+}
+
+.xs .x{
+  background: black;
+  padding: 0.5rem 1.2rem;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.xs .x.red{
+  color: red;
+}
+.xs .x.ts{
+  color: transparent;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;  
+}
+
+.flex-end{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-end{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+

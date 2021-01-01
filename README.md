@@ -1,70 +1,163 @@
-# Getting Started with Create React App
+# 100 mexicanos dijieron con react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto está inspirado en que queria jugar 100 mexicanos dijeron 
+con mi familia en año nuevo, pero no encontré nada en github que pudiera 
+instalar facilmente!.
+(Persona del futuro si estas leyendo esto: es 2020, si no sabes que ocurrió en 2020: buscalo en google o en la gran fuente de información que tengas en tu tiempo)
 
-## Available Scripts
 
-In the project directory, you can run:
+- Sonidos: 
+  - Respuesta correcta/incorrecta
+  - Ganador
+  - Entrada triunfal
+- Incluye marcadores automáticos
+- Agrega las preguntas que quieras
+- Fondo de tablero personalizable
+- Escrito con React hooks
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Instalacion:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Descarga el zip o copia con git clone
 
-### `yarn test`
+- Entra a la carpeta del proyecto: 
+` 
+  $ cd 100-mexicanos-dijeron-react
+`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Instala dependencias:
+`
+  $ npm install
+`
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Ejecutar la aplicación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para iniciar el proyecto en localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`
+  $ npm start
+`
 
-### `yarn eject`
+Crea una version comprimida de la aplicación en el directorio /build
+`
+  $ npm run build
+`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Ejecuta la aplicación comprimida
+`
+  $ npx serve -s build
+`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Uso
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+La aplicación está pensada para utilizarse unicamente con el teclado,
+por lo que cada acción o comando se ejecuta al presionar determinada tecla. 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Sonidos
+Al presionar la tecla correspondiente se escuchará ese sonido:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Respuesta correcta: <Enter>
+Respuesta incorrecta: e
+Gana ronda: g
+Entrada triunfal: <Espacio>
 
-### Code Splitting
+### Preguntas
+En el archivo: src/questions.js están definidas las preguntas
+que se presentarán en el juego:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##### questions.js:
+`
+export const questions = [
+  createQuestion('Menciona una raza de gato', [
+    createOption('Blanco', 50),
+    createOption('Mombay', 30),
+    createOption('Coliente', 10),
+    createOption('Negrito', 5),
+  ])
+]
+`
 
-### Analyzing the Bundle Size
+#### Agregar preguntas
+Para agregar preguntas simplemente copia y pega un nuevo elemento en
+el arreglo de preguntas descrito en el archivo src/questions.js.
+Y sigue el patron para escribir las preguntas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`
+  createQuestion('Aqui va tu pregunta', [
+    createOption('Aqui va una opcion de la pregunta', Puntaje)
+  ])
+`
 
-### Making a Progressive Web App
+### Errores
+Cada vez que la tecla 'e' es presionada, el tablero muestra una 'X', 
+en la parte inferior. Si quieres borrar una 'X' presiona 'w'.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Marcadores
+Muestran el puntaje hasta el momento obtenido en el juego. 
+Hay 3 marcadores en el tablero:
+- Marcador actual
+- 1 marcador para cada equipo
 
-### Advanced Configuration
+##### Marcador actual
+Muestran los puntos acumulados al destapar las opciones de la pregunta
+actual. 
+Al final de cada ronda se pueden sumar estos puntos a un equipo:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Presiona:
+- k para agregar los puntos al equipo de la izquierda
+- l para agregar los puntos al equipo de la derecha
 
-### Deployment
+### Destapar preguntas y opciones:
+Para destapar una pregunta y ocultarla presiona 's'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Para destapar una opcion tienes que presionar el numero de la opcion
+que quieres destapar. 
 
-### `yarn build` fails to minify
+Presiona:
+- 1 Destapar opcion 1
+- 2 ... opcion 2
+- 3 ... asi sucesivamente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Nota: El sonido de respuesta correcta no se reproduce al destapar una
+pregunta. Por lo que tienes que presionar <Enter> y luego el numero
+de la opcion a destapar para crear el mismo efecto que en el juego real.
+Nota 2: Al destapar una opcion, su puntaje es agregado al marcador actual,
+entonces para el caso donde nadie adivinó la respuesta, tienes que ocultar
+de nuevo las opciones para no sumar a ningun equipo esos puntos.
+
+
+### Moverse entre preguntas:
+- Presiona la tecla derecha para ir a la siguiente pregunta
+- Presiona la tecla izquierda para ir a la pregunta anterior (No se recomienda, 
+retroceder entre preguntas, si es que no entiendes muy bien como funcionan las teclas
+del marcador)
+
+### Personalizar el fondo:
+Para personalizar el fondo necesitas una imagen de 1024 x 576 px aproximadamente 
+( puede ser de otro tamaño pero debe de ser una imagen rectangular ).
+
+Entra al archivo src/config.json y edita el campo "bgImage", puede
+ser una url o el nombre de un archivo dentro del directorio /public
+dentro del proyecto.
+
+
+Notas del super desarrollador:
+
+- Disfruta con tu familia y juega en remoto por zoom o google meet!
+
+- El juego tiene precargadas algunas preguntas
+
+- El código está desorganizado y tiene muchas cosas que mejorar, si quieres mejorarlo estoy abierto a sugerencias xD
+
+- Futuras mejoras:
+  - Crear un servicio con socket.io e implementar una sencilla interfaz para usar botones al inicio de cada ronda
+  - Panel de control con una interfaz grafica 
+  - Agregar mas css y estilos
+  - Implementar rondas finales individuales
+  - Sonido de respuesta repetida
+  - Buscar mas sonidos del juego
+  - Refactorizacion
+  - Creacion de build con electron
