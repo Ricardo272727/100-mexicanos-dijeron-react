@@ -1,6 +1,6 @@
 # 100 mexicanos dijieron con react
 
-![Screenshot](https://https://github.com/Ricardo272727/100-mexicanos-dijeron-react/raw/master/screenshot.png "100 mexicanos dijeron react")
+![Screenshot](https://github.com/Ricardo272727/100-mexicanos-dijeron-react/blob/master/screenshot.png "100 mexicanos dijeron react")
 
 Este proyecto está inspirado en que queria jugar 100 mexicanos dijeron 
 con mi familia en año nuevo, pero no encontré nada en github que pudiera 
